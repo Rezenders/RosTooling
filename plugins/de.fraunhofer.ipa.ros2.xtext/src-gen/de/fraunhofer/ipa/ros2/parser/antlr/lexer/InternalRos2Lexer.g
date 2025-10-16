@@ -19,6 +19,8 @@ PrivateNamespace : 'PrivateNamespace';
 
 GlobalNamespace : 'GlobalNamespace';
 
+Lease_duration : 'lease_duration:';
+
 Serviceclients : 'serviceclients:';
 
 Serviceservers : 'serviceservers:';
@@ -49,6 +51,8 @@ Default_qos : 'default_qos';
 
 Durability : 'durability:';
 
+Liveliness : 'liveliness:';
+
 Parameters : 'parameters:';
 
 Publishers : 'publishers:';
@@ -59,11 +63,17 @@ Sensor_qos : 'sensor_qos';
 
 GraphName : 'GraphName';
 
+Automatic : 'automatic';
+
+Deadline : 'deadline:';
+
 Float32_1 : 'float32[]';
 
 Float64_1 : 'float64[]';
 
 Keep_last : 'keep_last';
+
+Lifespan : 'lifespan:';
 
 Actions : 'actions:';
 
@@ -74,6 +84,8 @@ Duration : 'duration';
 Feedback : 'feedback';
 
 History : 'history:';
+
+Infinite : 'infinite';
 
 Keep_all : 'keep_all';
 
@@ -136,6 +148,8 @@ Char_1 : 'char[]';
 Depth : 'depth:';
 
 Int8_1 : 'int8[]';
+
+Manual : 'manual';
 
 Result : 'result';
 
