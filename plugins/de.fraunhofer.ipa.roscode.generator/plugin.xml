@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-<!--	<extension
+<!--    <extension
         point="org.eclipse.ui.handlers">
         <handler
               class="de.fraunhofer.ipa.roscode.generator.RosCodeGeneratorExecutableExtensionFactory:de.fraunhofer.ipa.roscode.generator.GenerationHandler"
               commandId="de.fraunhofer.ipa.roscode.generator.command">
-     	</handler>
+        </handler>
     </extension>
- 
+
     <extension
          point="org.eclipse.ui.commands">
       <command
@@ -48,15 +48,15 @@
 
 
     <!-- ROS2 cpp code generator for nodes -->
-    
-	<extension
+
+    <extension
         point="org.eclipse.ui.handlers">
         <handler
               class="de.fraunhofer.ipa.roscode.generator.RosCodeGeneratorExecutableExtensionFactory:de.fraunhofer.ipa.roscode.generator.GenerationRos2CppHandler"
               commandId="de.fraunhofer.ipa.ros2cppcode.generator.command">
-     	</handler>
+        </handler>
     </extension>
- 
+
     <extension
          point="org.eclipse.ui.commands">
       <command
@@ -93,8 +93,8 @@
          </command>
       </menuContribution>
    </extension>
-   
-   
+
+
        <!-- ROS2 python code generator for nodes -->
     <extension
         point="org.eclipse.ui.handlers">
@@ -103,7 +103,7 @@
               commandId="de.fraunhofer.ipa.ros2pythoncode.generator.command">
         </handler>
     </extension>
- 
+
     <extension
          point="org.eclipse.ui.commands">
       <command
@@ -140,5 +140,5 @@
          </command>
       </menuContribution>
    </extension>
- 
+
 </plugin>

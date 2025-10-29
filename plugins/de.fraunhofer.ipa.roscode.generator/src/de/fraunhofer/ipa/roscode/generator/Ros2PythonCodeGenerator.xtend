@@ -14,51 +14,51 @@ import ros.Node
 
 /**
  * Generates code from your model files on save.
- * 
+ *
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class Ros2PythonCodeGenerator extends AbstractGenerator {
- 
-	String resourcepath
-	String import_msgs
-	int char_i
-	Node node
-	List<String> PkgsList
-	Set<String> set
-	ParameterGeneratorHelpers parameter_helper = new ParameterGeneratorHelpers() {
 
-		override get_param_declaration_str(String param_type, String param_name, String delim, Boolean has_value) {
-			var struct_str = "";
-			struct_str += "this->declare_parameter";
-			if (has_value) {
-				struct_str += "<" + param_type + ">";
-			}
-			struct_str += "(\"" + param_name + "\");\n";
-		 	struct_str += "this->get_parameter(\"" + param_name + "\", " + param_name.replace(delim, "_") + "_);\n\n";
+    String resourcepath
+    String import_msgs
+    int char_i
+    Node node
+    List<String> PkgsList
+    Set<String> set
+    ParameterGeneratorHelpers parameter_helper = new ParameterGeneratorHelpers() {
 
-		 	return struct_str;
-		}
+        override get_param_declaration_str(String param_type, String param_name, String delim, Boolean has_value) {
+            var struct_str = "";
+            struct_str += "this->declare_parameter";
+            if (has_value) {
+                struct_str += "<" + param_type + ">";
+            }
+            struct_str += "(\"" + param_name + "\");\n";
+            struct_str += "this->get_parameter(\"" + param_name + "\", " + param_name.replace(delim, "_") + "_);\n\n";
 
-	};
+            return struct_str;
+        }
 
-	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		resourcepath = resource.URI.toString();
-		if (! resourcepath.contains("/ros-input")) {
-			for (pkg : resource.allContents.toIterable.filter(Package)){
-				fsa.generateFile(pkg.getName().toLowerCase+"/package.xml",pkg.compile_package_xml)
-				fsa.generateFile(pkg.getName().toLowerCase+"/"+pkg.getName().toLowerCase+"/__init__.py","")
+    };
+
+    override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+        resourcepath = resource.URI.toString();
+        if (! resourcepath.contains("/ros-input")) {
+            for (pkg : resource.allContents.toIterable.filter(Package)){
+                fsa.generateFile(pkg.getName().toLowerCase+"/package.xml",pkg.compile_package_xml)
+                fsa.generateFile(pkg.getName().toLowerCase+"/"+pkg.getName().toLowerCase+"/__init__.py","")
                 fsa.generateFile(pkg.getName().toLowerCase+"/resource/"+pkg.getName().toLowerCase,"")
                 fsa.generateFile(pkg.getName().toLowerCase+"/setup.cfg",pkg.compile_setup_cfg)
                 fsa.generateFile(pkg.getName().toLowerCase+"/setup.py",pkg.compile_setup_py)
-                
 
-				 for (art : pkg.artifact){
-				 	node = art.node
+
+                 for (art : pkg.artifact){
+                    node = art.node
                     fsa.generateFile(pkg.getName().toLowerCase+"/"+pkg.getName().toLowerCase+"/"+node.name+".py",node.compile_node)
-				 	}
-				 }
-				}
-			}
+                    }
+                 }
+                }
+            }
 
 
 def compile_package_xml(Package pkg)'''
@@ -75,7 +75,7 @@ def compile_package_xml(Package pkg)'''
   <license>Apache 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
-  
+
   <depend>boost</depend>
   <depend>rclpy</depend>
   «FOR depend_pkg:pkg.getPkgDependencies»
@@ -179,23 +179,23 @@ def main(args=None):
 if __name__ == '__main__':
     main()
  '''
- 
+
  def List<String> getPkgDependencies(Package pkg){
- 	set=new HashSet<String>()
-	PkgsList = new ArrayList()
-	for (art:pkg.artifact){
-		node=art.node
-		for (pub:node.publisher){ if (pub.message.package !== null) set.add(pub.message.package.name)}
-		for (sub:node.subscriber){ if (sub.message.package !== null)  set.add(sub.message.package.name)}
-		for (srvserver:node.serviceserver){if (srvserver.service.package !== null) set.add(srvserver.service.package.name)}
-		for (srvclient:node.serviceclient){if (srvclient.service.package !== null) set.add(srvclient.service.package.name)}
-	}
-	PkgsList.addAll(set)
-	return PkgsList
+    set=new HashSet<String>()
+    PkgsList = new ArrayList()
+    for (art:pkg.artifact){
+        node=art.node
+        for (pub:node.publisher){ if (pub.message.package !== null) set.add(pub.message.package.name)}
+        for (sub:node.subscriber){ if (sub.message.package !== null)  set.add(sub.message.package.name)}
+        for (srvserver:node.serviceserver){if (srvserver.service.package !== null) set.add(srvserver.service.package.name)}
+        for (srvclient:node.serviceclient){if (srvclient.service.package !== null) set.add(srvclient.service.package.name)}
+    }
+    PkgsList.addAll(set)
+    return PkgsList
  }
- 
+
  def String check_name(String interface_name){
- 	return interface_name.replace("/","");
+    return interface_name.replace("/","");
  }
 
 }
