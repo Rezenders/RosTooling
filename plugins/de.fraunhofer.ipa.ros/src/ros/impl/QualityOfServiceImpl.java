@@ -3,12 +3,9 @@
 package ros.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import ros.QualityOfService;
 import ros.RosPackage;
 
@@ -25,6 +22,10 @@ import ros.RosPackage;
  *   <li>{@link ros.impl.QualityOfServiceImpl#getDepth <em>Depth</em>}</li>
  *   <li>{@link ros.impl.QualityOfServiceImpl#getReliability <em>Reliability</em>}</li>
  *   <li>{@link ros.impl.QualityOfServiceImpl#getDurability <em>Durability</em>}</li>
+ *   <li>{@link ros.impl.QualityOfServiceImpl#getLiveliness <em>Liveliness</em>}</li>
+ *   <li>{@link ros.impl.QualityOfServiceImpl#getLeaseDuration <em>Lease Duration</em>}</li>
+ *   <li>{@link ros.impl.QualityOfServiceImpl#getLifespan <em>Lifespan</em>}</li>
+ *   <li>{@link ros.impl.QualityOfServiceImpl#getDeadline <em>Deadline</em>}</li>
  * </ul>
  *
  * @generated
@@ -131,6 +132,86 @@ public class QualityOfServiceImpl extends MinimalEObjectImpl.Container implement
     protected String durability = DURABILITY_EDEFAULT;
 
     /**
+     * The default value of the '{@link #getLiveliness() <em>Liveliness</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLiveliness()
+     * @generated
+     * @ordered
+     */
+    protected static final String LIVELINESS_EDEFAULT = null;
+
+                /**
+     * The cached value of the '{@link #getLiveliness() <em>Liveliness</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLiveliness()
+     * @generated
+     * @ordered
+     */
+    protected String liveliness = LIVELINESS_EDEFAULT;
+
+                /**
+     * The default value of the '{@link #getLeaseDuration() <em>Lease Duration</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLeaseDuration()
+     * @generated
+     * @ordered
+     */
+    protected static final String LEASE_DURATION_EDEFAULT = null;
+
+                /**
+     * The cached value of the '{@link #getLeaseDuration() <em>Lease Duration</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLeaseDuration()
+     * @generated
+     * @ordered
+     */
+    protected String leaseDuration = LEASE_DURATION_EDEFAULT;
+
+                /**
+     * The default value of the '{@link #getLifespan() <em>Lifespan</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLifespan()
+     * @generated
+     * @ordered
+     */
+    protected static final String LIFESPAN_EDEFAULT = null;
+
+                /**
+     * The cached value of the '{@link #getLifespan() <em>Lifespan</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getLifespan()
+     * @generated
+     * @ordered
+     */
+    protected String lifespan = LIFESPAN_EDEFAULT;
+
+                /**
+     * The default value of the '{@link #getDeadline() <em>Deadline</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getDeadline()
+     * @generated
+     * @ordered
+     */
+    protected static final String DEADLINE_EDEFAULT = null;
+
+                /**
+     * The cached value of the '{@link #getDeadline() <em>Deadline</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getDeadline()
+     * @generated
+     * @ordered
+     */
+    protected String deadline = DEADLINE_EDEFAULT;
+
+                /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -270,6 +351,98 @@ public class QualityOfServiceImpl extends MinimalEObjectImpl.Container implement
      * @generated
      */
     @Override
+    public String getLeaseDuration() {
+        return leaseDuration;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLeaseDuration(String newLeaseDuration) {
+        String oldLeaseDuration = leaseDuration;
+        leaseDuration = newLeaseDuration;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.QUALITY_OF_SERVICE__LEASE_DURATION, oldLeaseDuration, leaseDuration));
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getLiveliness() {
+        return liveliness;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLiveliness(String newLiveliness) {
+        String oldLiveliness = liveliness;
+        liveliness = newLiveliness;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.QUALITY_OF_SERVICE__LIVELINESS, oldLiveliness, liveliness));
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getLifespan() {
+        return lifespan;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setLifespan(String newLifespan) {
+        String oldLifespan = lifespan;
+        lifespan = newLifespan;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.QUALITY_OF_SERVICE__LIFESPAN, oldLifespan, lifespan));
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String getDeadline() {
+        return deadline;
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setDeadline(String newDeadline) {
+        String oldDeadline = deadline;
+        deadline = newDeadline;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, RosPackage.QUALITY_OF_SERVICE__DEADLINE, oldDeadline, deadline));
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
             case RosPackage.QUALITY_OF_SERVICE__QO_SPROFILE:
@@ -282,6 +455,14 @@ public class QualityOfServiceImpl extends MinimalEObjectImpl.Container implement
                 return getReliability();
             case RosPackage.QUALITY_OF_SERVICE__DURABILITY:
                 return getDurability();
+            case RosPackage.QUALITY_OF_SERVICE__LIVELINESS:
+                return getLiveliness();
+            case RosPackage.QUALITY_OF_SERVICE__LEASE_DURATION:
+                return getLeaseDuration();
+            case RosPackage.QUALITY_OF_SERVICE__LIFESPAN:
+                return getLifespan();
+            case RosPackage.QUALITY_OF_SERVICE__DEADLINE:
+                return getDeadline();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -308,6 +489,18 @@ public class QualityOfServiceImpl extends MinimalEObjectImpl.Container implement
                 return;
             case RosPackage.QUALITY_OF_SERVICE__DURABILITY:
                 setDurability((String)newValue);
+                return;
+            case RosPackage.QUALITY_OF_SERVICE__LIVELINESS:
+                setLiveliness((String)newValue);
+                return;
+            case RosPackage.QUALITY_OF_SERVICE__LEASE_DURATION:
+                setLeaseDuration((String)newValue);
+                return;
+            case RosPackage.QUALITY_OF_SERVICE__LIFESPAN:
+                setLifespan((String)newValue);
+                return;
+            case RosPackage.QUALITY_OF_SERVICE__DEADLINE:
+                setDeadline((String)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -336,6 +529,18 @@ public class QualityOfServiceImpl extends MinimalEObjectImpl.Container implement
             case RosPackage.QUALITY_OF_SERVICE__DURABILITY:
                 setDurability(DURABILITY_EDEFAULT);
                 return;
+            case RosPackage.QUALITY_OF_SERVICE__LIVELINESS:
+                setLiveliness(LIVELINESS_EDEFAULT);
+                return;
+            case RosPackage.QUALITY_OF_SERVICE__LEASE_DURATION:
+                setLeaseDuration(LEASE_DURATION_EDEFAULT);
+                return;
+            case RosPackage.QUALITY_OF_SERVICE__LIFESPAN:
+                setLifespan(LIFESPAN_EDEFAULT);
+                return;
+            case RosPackage.QUALITY_OF_SERVICE__DEADLINE:
+                setDeadline(DEADLINE_EDEFAULT);
+                return;
         }
         super.eUnset(featureID);
     }
@@ -358,6 +563,14 @@ public class QualityOfServiceImpl extends MinimalEObjectImpl.Container implement
                 return RELIABILITY_EDEFAULT == null ? reliability != null : !RELIABILITY_EDEFAULT.equals(reliability);
             case RosPackage.QUALITY_OF_SERVICE__DURABILITY:
                 return DURABILITY_EDEFAULT == null ? durability != null : !DURABILITY_EDEFAULT.equals(durability);
+            case RosPackage.QUALITY_OF_SERVICE__LIVELINESS:
+                return LIVELINESS_EDEFAULT == null ? liveliness != null : !LIVELINESS_EDEFAULT.equals(liveliness);
+            case RosPackage.QUALITY_OF_SERVICE__LEASE_DURATION:
+                return LEASE_DURATION_EDEFAULT == null ? leaseDuration != null : !LEASE_DURATION_EDEFAULT.equals(leaseDuration);
+            case RosPackage.QUALITY_OF_SERVICE__LIFESPAN:
+                return LIFESPAN_EDEFAULT == null ? lifespan != null : !LIFESPAN_EDEFAULT.equals(lifespan);
+            case RosPackage.QUALITY_OF_SERVICE__DEADLINE:
+                return DEADLINE_EDEFAULT == null ? deadline != null : !DEADLINE_EDEFAULT.equals(deadline);
         }
         return super.eIsSet(featureID);
     }
@@ -382,6 +595,14 @@ public class QualityOfServiceImpl extends MinimalEObjectImpl.Container implement
         result.append(reliability);
         result.append(", Durability: ");
         result.append(durability);
+        result.append(", Liveliness: ");
+        result.append(liveliness);
+        result.append(", LeaseDuration: ");
+        result.append(leaseDuration);
+        result.append(", Lifespan: ");
+        result.append(lifespan);
+        result.append(", Deadline: ");
+        result.append(deadline);
         result.append(')');
         return result.toString();
     }

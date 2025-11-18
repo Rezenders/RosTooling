@@ -2467,13 +2467,49 @@ public interface RosPackage extends EPackage {
     int QUALITY_OF_SERVICE__DURABILITY = 4;
 
     /**
+     * The feature id for the '<em><b>Liveliness</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int QUALITY_OF_SERVICE__LIVELINESS = 5;
+
+                /**
+     * The feature id for the '<em><b>Lease Duration</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int QUALITY_OF_SERVICE__LEASE_DURATION = 6;
+
+                /**
+     * The feature id for the '<em><b>Lifespan</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int QUALITY_OF_SERVICE__LIFESPAN = 7;
+
+                /**
+     * The feature id for the '<em><b>Deadline</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int QUALITY_OF_SERVICE__DEADLINE = 8;
+
+                /**
      * The number of structural features of the '<em>Quality Of Service</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int QUALITY_OF_SERVICE_FEATURE_COUNT = 5;
+    int QUALITY_OF_SERVICE_FEATURE_COUNT = 9;
 
     /**
      * The number of operations of the '<em>Quality Of Service</em>' class.
@@ -3851,6 +3887,50 @@ public interface RosPackage extends EPackage {
     EAttribute getQualityOfService_Durability();
 
     /**
+     * Returns the meta object for the attribute '{@link ros.QualityOfService#getLeaseDuration <em>Lease Duration</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Lease Duration</em>'.
+     * @see ros.QualityOfService#getLeaseDuration()
+     * @see #getQualityOfService()
+     * @generated
+     */
+    EAttribute getQualityOfService_LeaseDuration();
+
+                /**
+     * Returns the meta object for the attribute '{@link ros.QualityOfService#getLiveliness <em>Liveliness</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Liveliness</em>'.
+     * @see ros.QualityOfService#getLiveliness()
+     * @see #getQualityOfService()
+     * @generated
+     */
+    EAttribute getQualityOfService_Liveliness();
+
+                /**
+     * Returns the meta object for the attribute '{@link ros.QualityOfService#getLifespan <em>Lifespan</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Lifespan</em>'.
+     * @see ros.QualityOfService#getLifespan()
+     * @see #getQualityOfService()
+     * @generated
+     */
+    EAttribute getQualityOfService_Lifespan();
+
+                /**
+     * Returns the meta object for the attribute '{@link ros.QualityOfService#getDeadline <em>Deadline</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Deadline</em>'.
+     * @see ros.QualityOfService#getDeadline()
+     * @see #getQualityOfService()
+     * @generated
+     */
+    EAttribute getQualityOfService_Deadline();
+
+                /**
      * Returns the meta object for class '{@link ros.TopicSpecMsgRef <em>Topic Spec Msg Ref</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4995,6 +5075,38 @@ public interface RosPackage extends EPackage {
         EAttribute QUALITY_OF_SERVICE__DURABILITY = eINSTANCE.getQualityOfService_Durability();
 
         /**
+         * The meta object literal for the '<em><b>Lease Duration</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute QUALITY_OF_SERVICE__LEASE_DURATION = eINSTANCE.getQualityOfService_LeaseDuration();
+
+                                /**
+         * The meta object literal for the '<em><b>Liveliness</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute QUALITY_OF_SERVICE__LIVELINESS = eINSTANCE.getQualityOfService_Liveliness();
+
+                                /**
+         * The meta object literal for the '<em><b>Lifespan</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute QUALITY_OF_SERVICE__LIFESPAN = eINSTANCE.getQualityOfService_Lifespan();
+
+                                /**
+         * The meta object literal for the '<em><b>Deadline</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute QUALITY_OF_SERVICE__DEADLINE = eINSTANCE.getQualityOfService_Deadline();
+
+                                /**
          * The meta object literal for the '{@link ros.impl.TopicSpecMsgRefImpl <em>Topic Spec Msg Ref</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->

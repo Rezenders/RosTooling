@@ -242,18 +242,18 @@ def generate_launch_description():
                 var origin_name = origin.substring(origin.indexOf("name: ") + 6, origin.lastIndexOf(")]"))
                 if (interface.name.equals(origin_name)){
                     if (interface.reference instanceof RosActionServerReference){
-                    	val actionSuffixes = new ArrayList
-							actionSuffixes.add("/_action/feedback")
-							actionSuffixes.add("/_action/status")
-							actionSuffixes.add("/_action/cancel_goal")
-							actionSuffixes.add("/_action/get_result")
-							actionSuffixes.add("/_action/send_goal")
-							for (suf : actionSuffixes) {
- 							   remap_str += "\t(\"" + origin_name + suf + "\", \"" + interface.name + suf + "\"),\n";
-							}
+                        val actionSuffixes = new ArrayList
+                            actionSuffixes.add("/_action/feedback")
+                            actionSuffixes.add("/_action/status")
+                            actionSuffixes.add("/_action/cancel_goal")
+                            actionSuffixes.add("/_action/get_result")
+                            actionSuffixes.add("/_action/send_goal")
+                            for (suf : actionSuffixes) {
+                               remap_str += "\t(\"" + origin_name + suf + "\", \"" + interface.name + suf + "\"),\n";
+                            }
                     }
                     else{
-	                    remap_str += "\t(\"" + origin_name + "\", \"" + interface.name + "\"),\n";
+                        remap_str += "\t(\"" + origin_name + "\", \"" + interface.name + "\"),\n";
 
                     }
                 }

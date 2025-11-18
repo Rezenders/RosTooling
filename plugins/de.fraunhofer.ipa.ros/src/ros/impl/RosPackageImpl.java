@@ -1732,6 +1732,46 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
      * @generated
      */
     @Override
+    public EAttribute getQualityOfService_LeaseDuration() {
+        return (EAttribute)qualityOfServiceEClass.getEStructuralFeatures().get(6);
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getQualityOfService_Liveliness() {
+        return (EAttribute)qualityOfServiceEClass.getEStructuralFeatures().get(5);
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getQualityOfService_Lifespan() {
+        return (EAttribute)qualityOfServiceEClass.getEStructuralFeatures().get(7);
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getQualityOfService_Deadline() {
+        return (EAttribute)qualityOfServiceEClass.getEStructuralFeatures().get(8);
+    }
+
+                /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
     public EClass getTopicSpecMsgRef() {
         return topicSpecMsgRefEClass;
     }
@@ -1975,6 +2015,10 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
         createEAttribute(qualityOfServiceEClass, QUALITY_OF_SERVICE__DEPTH);
         createEAttribute(qualityOfServiceEClass, QUALITY_OF_SERVICE__RELIABILITY);
         createEAttribute(qualityOfServiceEClass, QUALITY_OF_SERVICE__DURABILITY);
+        createEAttribute(qualityOfServiceEClass, QUALITY_OF_SERVICE__LIVELINESS);
+        createEAttribute(qualityOfServiceEClass, QUALITY_OF_SERVICE__LEASE_DURATION);
+        createEAttribute(qualityOfServiceEClass, QUALITY_OF_SERVICE__LIFESPAN);
+        createEAttribute(qualityOfServiceEClass, QUALITY_OF_SERVICE__DEADLINE);
 
         topicSpecMsgRefEClass = createEClass(TOPIC_SPEC_MSG_REF);
         createEReference(topicSpecMsgRefEClass, TOPIC_SPEC_MSG_REF__REFERENCE);
@@ -2228,6 +2272,10 @@ public class RosPackageImpl extends EPackageImpl implements RosPackage {
         initEAttribute(getQualityOfService_Depth(), theXMLTypePackage.getInt(), "Depth", null, 0, 1, QualityOfService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getQualityOfService_Reliability(), ecorePackage.getEString(), "Reliability", "reliable", 0, 1, QualityOfService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getQualityOfService_Durability(), ecorePackage.getEString(), "Durability", "transient_local", 0, 1, QualityOfService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getQualityOfService_Liveliness(), ecorePackage.getEString(), "Liveliness", null, 0, 1, QualityOfService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getQualityOfService_LeaseDuration(), ecorePackage.getEString(), "LeaseDuration", null, 0, 1, QualityOfService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getQualityOfService_Lifespan(), ecorePackage.getEString(), "Lifespan", null, 0, 1, QualityOfService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getQualityOfService_Deadline(), ecorePackage.getEString(), "Deadline", null, 0, 1, QualityOfService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(topicSpecMsgRefEClass, TopicSpecMsgRef.class, "TopicSpecMsgRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getTopicSpecMsgRef_Reference(), this.getTopicSpec(), null, "Reference", null, 1, 1, TopicSpecMsgRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
