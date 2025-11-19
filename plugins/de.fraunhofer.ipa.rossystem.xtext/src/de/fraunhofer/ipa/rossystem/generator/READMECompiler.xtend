@@ -10,7 +10,7 @@ import system.impl.RosServiceClientReferenceImpl
 import system.impl.RosServiceServerReferenceImpl
 import system.impl.RosSubscriberReferenceImpl
 import com.google.inject.Inject
-import system.RosParameter
+import ros.Parameter
 
 class READMECompiler {
 
@@ -88,7 +88,7 @@ source install/setup.bash
 To execute the launch file, the following command can be called:
 
 ```
-ros2 launch «system.name» «system.name».launch.py «FOR param:system.parameter»«(param as RosParameter).name»:=«get_param_value((param as RosParameter).value,(param as RosParameter).name)» «ENDFOR»
+ros2 launch «system.name» «system.name».launch.py «FOR param:system.parameter»«(param as ros.Parameter).name»:=«get_param_value((param as ros.Parameter).value,(param as ros.Parameter).name)» «ENDFOR»
 ```
 
 The generated launch files requires the xterm package, it can be installed by:
@@ -101,7 +101,7 @@ sudo apt install xterm
 To launch this system there is already an existing package that contains the launch file. It can be started by:
 
 ```
-ros2 launch «system.fromFile.split("/",2).get(0)» «system.fromFile.substring(system.fromFile.lastIndexOf('/') + 1)» «FOR param:system.parameter»«(param as RosParameter).name»:=«get_param_value((param as RosParameter).value,(param as RosParameter).name)» «ENDFOR»
+ros2 launch «system.fromFile.split("/",2).get(0)» «system.fromFile.substring(system.fromFile.lastIndexOf('/') + 1)» «FOR param:system.parameter»«(param as ros.Parameter).name»:=«get_param_value((param as ros.Parameter).value,(param as ros.Parameter).name)» «ENDFOR»
 ```
 «ENDIF»
 
