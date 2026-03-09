@@ -25,10 +25,7 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         server-username: GITHUB_ACTOR
         server-password: GITHUB_TOKEN
-
-    - name: Build with Maven
-      run: mvn -B clean package -f plugins/de.fraunhofer.ipa.parent/pom.xml
-
+        
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -B -f plugins/de.fraunhofer.ipa.ros.parent/pom.xml
       env:
