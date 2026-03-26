@@ -36,7 +36,7 @@ public class RosSystemGeneratorCommandService implements IExecutableCommandServi
     
     private void forceLog(String message) {
         try {
-            File logFile = new File(System.getProperty("user.home"), "ros_lsp_debug.log");
+            File logFile = new File(System.getProperty("java.io.tmpdir"), "ros_lsp_debug.log");
             String logEntry = LocalDateTime.now() + " [ROS LSP] " + message + "\n";
             Files.write(logFile.toPath(), logEntry.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
         } catch (Exception e) {
