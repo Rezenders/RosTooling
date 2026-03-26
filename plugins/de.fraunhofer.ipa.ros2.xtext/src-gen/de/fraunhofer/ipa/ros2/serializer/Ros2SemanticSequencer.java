@@ -431,7 +431,15 @@ public class Ros2SemanticSequencer extends RosSemanticSequencer {
 	 *         Reliability='best_effort' | 
 	 *         Reliability='reliable' | 
 	 *         Durability='transient_local' | 
-	 *         Durability='volatile'
+	 *         Durability='volatile' | 
+	 *         LeaseDuration=EString | 
+	 *         LeaseDuration='infinite' | 
+	 *         Liveliness='automatic' | 
+	 *         Liveliness='manual' | 
+	 *         Lifespan=EString | 
+	 *         Lifespan='infinite' | 
+	 *         Deadline=EString | 
+	 *         Deadline='infinite'
 	 *     )*
 	 * </pre>
 	 */
