@@ -22,6 +22,8 @@ import org.eclipse.xtext.ide.server.ILanguageServerAccess;
 import org.eclipse.xtext.ide.server.commands.IExecutableCommandService;
 import org.eclipse.xtext.resource.IResourceServiceProvider;
 import org.eclipse.xtext.util.CancelIndicator;
+import org.eclipse.xtext.generator.IGenerator2;
+import org.eclipse.xtext.generator.GeneratorContext;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
@@ -82,10 +84,15 @@ public class RosSystemGeneratorCommandService implements IExecutableCommandServi
 						Resource resource = context.getResource();
 						EcoreUtil.resolveAll(resource);
 						IResourceServiceProvider rsp = resourceServiceRegistry.getResourceServiceProvider(uri);
-						GeneratorDelegate generator = rsp.get(GeneratorDelegate.class);
-						
+						IGenerator2 generator = rsp.get(IGenerator2.class);
+						if (generator == null) {
+							forceLog("ERROR: IGenerator2 not bound in language module!");
+							return Map.of("error", "Generator not found");
+						}
 						var fsa = new InMemoryFileSystemAccess();
-						generator.doGenerate(resource, fsa);
+						var context1 = new GeneratorContext();
+						context1.setCancelIndicator(CancelIndicator.NullImpl);
+						generator.doGenerate(resource, fsa, context1);
 						
 						Map<String, String> files = fsa.getAllFiles().entrySet().stream()
 		                        .collect(Collectors.toMap(Map.Entry::getKey, e -> e.getValue().toString()));
