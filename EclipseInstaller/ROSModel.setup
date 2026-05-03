@@ -166,6 +166,7 @@
           <excludedPath>de.fraunhofer.ipa.rossystem.model.combination</excludedPath>
           <excludedPath>de.fraunhofer.ipa.ros.model.spec.check</excludedPath>
           <excludedPath>de.fraunhofer.ipa.ros.observer.generator</excludedPath>
+          <excludedPath>de.fraunhofer.ipa.ros.tests</excludedPath>
           <excludedPath>de.fraunhofer.ipa.ros.xtext.tests</excludedPath>
           <excludedPath>de.fraunhofer.ipa.rossystem.xtext.tests</excludedPath>
         </sourceLocator>
