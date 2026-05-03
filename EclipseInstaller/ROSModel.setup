@@ -87,6 +87,8 @@
             url="https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.42.0/"/>
         <repository
             url="https://download.eclipse.org/modeling/emft/mwe/updates/releases/"/>
+        <repository
+            url="https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/2025-12/"/>
       </repositoryList>
       <repositoryList
           name="2024-09">
@@ -180,6 +182,8 @@
             url="https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.42.0/"/>
           <repository
             url="https://download.eclipse.org/modeling/emft/mwe/updates/releases/"/>
+          <repository
+            url="https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/2025-12/"/>
         </repositoryList>
         <repositoryList
             name="2024-09">
